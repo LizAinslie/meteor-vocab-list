@@ -33,7 +33,7 @@ class NewPlace extends React.Component {
 		}
 		
 		Places.insert({
-			name: name.toLowerCase(),
+			name: name,
 			x: Number(ReactDOM.findDOMNode(this.refs.xInput).value.trim()),
 			y: Number(ReactDOM.findDOMNode(this.refs.yInput).value.trim()),
 			z: Number(ReactDOM.findDOMNode(this.refs.zInput).value.trim()),
