@@ -94,6 +94,17 @@ header {
   outline: none;
 }
 
+.new-term input[type=number] {
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #eee;
+  transition: 0.3s;
+}
+
+.new-term input[type=number]:focus {
+  border-color: #343a40;
+  outline: none;
+}
+
 .new-term input[type=submit] {
   transition: 0.3s;
 	border: 2px solid #343a40;

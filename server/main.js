@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import Terms from '/imports/api/terms';
+import Places from '/imports/api/places';
 
 Meteor.startup(() => {
-  if (Terms.length === 0) {
+  if (Places.length === 0) {
     // maybe add some terms
   }
 });

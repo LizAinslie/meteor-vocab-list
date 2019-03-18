@@ -2,16 +2,16 @@ import React from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 
-import Term from './components/Term';
-import NewTerm from './components/NewTerm';
+import Place from './components/Place';
+import NewPlace from './components/NewPlace';
 import AccountsUIWrapper from './components/wrappers/AccountsUIWrapper';
 
-import Terms from '../api/terms';
+import Places from '../api/places';
 
 class App extends React.Component {
-    renderTerms() {
-		return this.props.terms.map(term => (
-			<Term key={term._id} term={term} />
+    renderPlaces() {
+		return this.props.places.map(place => (
+			<Place key={place._id} place={place} />
 		));
 	}
 	
@@ -20,15 +20,15 @@ class App extends React.Component {
 			<div className="container">
 				<AccountsUIWrapper />
 				<header>
-					<h1>Vocab List</h1>
+					<h1>KC Coordinates Sharer</h1>
 				</header>
 				{this.props.user ?
-					<NewTerm />
+					<NewPlace />
 				:
-					<NewTerm disabled />
+					<NewPlace disabled />
 				}
 				<ul className="vocab-list">
-					{this.renderTerms()}
+					{this.renderPlaces()}
 				</ul>
 			</div>
 		);
@@ -37,7 +37,7 @@ class App extends React.Component {
 
 export default withTracker(({ id }) => {
 	return {
-		terms: Terms.getAll({ sort: { createdAt: -1 } }),
+		places: Places.getAll({ sort: { createdAt: -1 } }),
 		user: Meteor.user()
 	};
 })(App);
