@@ -28,7 +28,7 @@ export default class Place extends React.Component {
           <button className="delete" onClick={this.deleteThis}>&times;</button>
         : ''}
         <h5>
-          <b>{_.String.capitalize(this.props.place.name)}</b>
+          <b>{this.props.place.name}</b>
         </h5>
         <table>
           <tr>
